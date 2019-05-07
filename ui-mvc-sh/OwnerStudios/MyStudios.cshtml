@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SS.DATA.EF.OwnerStudio>
+
+@{
+    ViewBag.Title = "MyStudios";
+}
+
+<style>
+    .feature_item {
+        background: #fff;
+        border-radius: 150px;
+        padding: 20px 40px 10px 20px;
+        margin-bottom: 30px;
+        width: 20%;
+    }
+</style>
+<div class="row">
+    <div class="feature_item mx-auto">
+        <a href="~/OwnerStudios/Create">
+            <h4 class="text-center"><i class="lnr lnr-plus-circle"></i>Add Studio</h4>
+        </a>
+    </div>
+    <div class="feature_item mx-auto">
+        <a href="~/OwnerStudios/Index">
+            <h4 class="text-center"><i class="lnr lnr-users"></i>All Studios</h4>
+        </a>
+    </div>
+
+    <div class="feature_item mx-auto">
+        <a href="~/Reservations/MyReservations">
+            <h4 class="text-center"><i class="lnr lnr-phone"></i>My Reservations</h4>
+        </a>
+    </div>
+</div>   
+
+<div class="container">
+    <div class="row properties_inner">
+
+        @foreach (var item in Model)
+            {
+            <div class="col-lg-4">
+                <style>
+                    .properties_item {
+                        margin-bottom: 30px;
+                    }
+                </style>
+                <div class="properties_item">
+                    <div class="pp_img">
+                        <img class="img-fluid" src="~/Content/Images/OwnerStudios/@item.StudioPhoto" alt="">
+                    </div>
+                    <div class="pp_content">
+                        <a href="#"><h4>@Html.DisplayFor(modelItem => item.StudioName)</h4></a>
+                        <p>@Html.DisplayFor(modelItem => item.StudioAbout)</p>
+                        <div class="tags">
+                            <a href="#">@Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State)</a>
+                            <a href="#">Reservation Limit: @Html.DisplayFor(modelItem => item.ReservationLimit)</a>
+                            
+                        </div>
+                        <div class="pp_footer">
+                            <h5>Hourly Rate:<strong style="color: green;">
+    $@Html.DisplayFor(modelItem => item.StudioRules).00
+</strong></h5>
+                        </div>
+                        <br />
+                        <a href="~/OwnerStudios/Edit/@item.OwnerStudioID" class="main_btn2">Edit</a>
+                        <a href="~/OwnerStudios/Delete/@item.OwnerStudioID" class="main_btn2">Delete</a>
+                        <br />
+                    </div>
+                 
+                </div>
+                
+            </div>
+                   
+        }
+
+    </div>
+</div>

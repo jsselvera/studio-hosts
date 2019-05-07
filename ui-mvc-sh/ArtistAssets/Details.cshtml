@@ -1,0 +1,52 @@
+﻿@model SS.DATA.EF.ArtistAsset
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+
+    <dl>
+        <dd>
+            <img class="profile-circle" src="~/Content/Images/ArtistAssets/@Model.ArtistPhoto" />
+        </dd>
+
+        <dd>
+            <h1 class="profile-header">@Html.DisplayFor(model => model.ArtistName)</h1>
+        </dd>
+
+        <dd>
+            <h2 class="profile-header2">@Html.DisplayFor(model => model.ArtistGenre)</h2>
+        </dd>
+</dl>
+    <br />
+    <dl>
+        <dt class="profile-bio">
+            @Html.DisplayNameFor(model => model.ArtistBio)
+        </dt>
+
+        <dd>
+            <p class="profile-bio">@Html.DisplayFor(model => model.ArtistBio)</p>
+        </dd>
+    </dl>
+    <br />
+    <dl>
+        <dd>
+            <p>
+                <iframe class="soundcloudplayer" width="30%" height="166" scrolling="no" frameborder="no" allow="autoplay" src=" @Html.DisplayFor(model => model.ArtistLink)"></iframe>
+            
+            </p>
+        </dd>
+
+    </dl>
+</div>
+<br />
+
+<p>
+  
+</p>
+<br />
+<br />
+<br />
+<br />
+<br />

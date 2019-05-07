@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SS.DATA.EF.ArtistAsset>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+    <div class="container">
+        <div class="row">
+@foreach (var item in Model)
+{
+            <div class="col-md-4">
+                <div class="card border-0 shadow">
+                    <a href="~/ArtistAssets/Details/@item.ArtistAssetID">
+                        <img src="~/Content/Images/ArtistAssets/@item.ArtistPhoto" class="artist-circle" alt="...">
+                    </a>
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">@Html.DisplayFor(modelItem => item.ArtistName)</h5>
+                        <div class="card-text text-black-50">@Html.DisplayFor(modelItem => item.ArtistGenre)</div>
+                       </div>
+                </div>
+            </div>
+         
+}
+        </div>
+        </div>
+        
+<br />

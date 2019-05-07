@@ -1,0 +1,29 @@
+﻿@model SS.UI.MVC.Models.ContactViewModel
+@{
+    ViewBag.Title = "ContactConfirmation";
+}
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="banner_content">
+                <div class="page_link">
+                    <a href="~/Home/Index">Home</a>
+                    <a href="~/Home/Contact">Contact</a>
+                </div>
+                <h2>Contact Us</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<div class="main_title">
+    <h2>Thank you for contacting us, @Model.Name!</h2>
+    <p>We appreciate your input and will get back to you as soon as possible.</p>
+</div>
+<br />
+<br />
+

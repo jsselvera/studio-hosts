@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SS.DATA.EF.Reservation>
+
+@{
+    ViewBag.Title = "MyReservations";
+}
+
+<style>
+    .feature_item {
+        background: #fff;
+        border-radius: 150px;
+        padding: 20px 40px 10px 20px;
+        margin-bottom: 30px;
+        width: 20%;
+    }
+</style>
+<div class="row">
+    <div class="feature_item mx-auto">
+        <a href="~/OwnerStudios/Create">
+            <h4 class="text-center"><i class="lnr lnr-plus-circle"></i>Add Studio</h4>
+        </a>
+    </div>
+    <div class="feature_item mx-auto">
+        <a href="~/OwnerStudios/MyStudios">
+            <h4 class="text-center"><i class="lnr lnr-users"></i>My Studios</h4>
+        </a>
+    </div>
+
+    <div class="feature_item mx-auto">
+        <a href="~/Reservations/MyReservations">
+            <h4 class="text-center"><i class="lnr lnr-phone"></i>My Reservations</h4>
+        </a>
+    </div>
+</div>   
+
+<table class="table" style="margin-left: 5%; margin-right: 5%;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtistAsset.ArtistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerStudio.StudioName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReservationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistAsset.ArtistName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerStudio.StudioName)
+        </td>
+        <td>
+            <div class="form-actions no-color">
+                <a href="~/Reservations/Details/@item.ReservationID" class="main_btn2">Details</a> |  
+                <a href="~/Reservations/Delete/@item.ReservationID" class="main_btn2">Delete</a>
+                
+            </div>
+        </td>
+    </tr>
+}
+    
+</table>
+<div style="margin-bottom: 50%;">
+
+</div>

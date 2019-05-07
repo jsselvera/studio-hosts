@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SS.DATA.EF.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtistAsset.ArtistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerStudio.StudioName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReservationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReservationTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistAsset.ArtistName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerStudio.StudioName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReservationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReservationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReservationID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,114 @@
+﻿@model SS.DATA.EF.OwnerStudio
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudioName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudioName)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudioPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudioPhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudioAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudioAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProducerAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProducerAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudioRules)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudioRules)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="main_btn2" /> |
+            <a href="~/OwnerStudios/MyStudios" class="main_btn2">Cancel</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,61 @@
+﻿@model SS.UI.MVC.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="banner_content">
+                <div class="page_link">
+                    <a href="~/Home/Index">Home</a>
+                    <a href="~/Home/Contact">Contact</a>
+                </div>
+                <h2>Contact Us</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+
+<!--================Contact Area =================-->
+
+
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "row contact_form", id = "contactForm", style = "margin-left:5%" }))
+        {
+            <div class="col-md-12">
+                @Html.AntiForgeryToken()   <div class="form-group">
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Your Name" })
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Your Email" })
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Subject" })
+                    @Html.ValidationMessageFor(x => x.Subject)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.TextAreaFor(x => x.Message, new { @class = "form-control", name = "", id = "", cols = "30", rows = "7", placeholder = "Message" })
+                    @Html.ValidationMessageFor(x => x.Message)
+                </div>
+            </div>
+
+             
+                <div class="col-md-3 form-group" style="text-align: right;">
+                    <input type="submit" class="btn submit_btn" value="Send Message" />
+                </div>
+        }
+<br />
+<br />
+<br />
+
+<!--================Contact Area =================-->
